@@ -1,0 +1,136 @@
+body {
+  font-family: "Roboto Mono", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: radial-gradient(
+    circle,
+    #f1eaf6,
+    #a75ae2
+  ); /* Radial gradient */
+  margin: 0;
+}
+
+h1,
+h2 {
+  color: #53048f;
+}
+
+.player-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  margin: 10px 0;
+  padding: 10px 10px;
+  font-family: "Roboto Mono", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-size: 16px;
+  border: 3px solid #f1eaf6;
+  border-radius: 2px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+input:hover {
+  border-color: #6a11cb;
+  background-color: #f9f9f9;
+}
+
+input:focus {
+  border-color: #6a11cb;
+  background-color: #f1eaf6;
+  box-shadow: 0 0 8px rgba(106, 17, 203, 0.5);
+  outline: none;
+}
+
+input::placeholder {
+  color: #ab7ccc;
+}
+
+button {
+  font-family: "Roboto Mono", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.7em 2em;
+  border: 3px solid #53048f;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #53048f;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+  margin-top: 10px;
+}
+
+button::before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: #53048f;
+  z-index: -1;
+}
+
+button:hover,
+button:focus {
+  color: white;
+}
+
+button:hover:before,
+button:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  margin: 20px 0;
+}
+
+.cell {
+  background-color: #53048f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #f1eaf6;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-radius: 2px;
+}
+
+.cell:hover {
+  background-color: #6a11cb80;
+}
+
+.hidden {
+  display: none;
+}
